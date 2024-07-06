@@ -102,6 +102,16 @@
         <img src="${curso.imagen}" alt="${curso.nombrecurso}">
         <p><strong>Presentación:</strong> ${curso.presentacion}</p>
         <p><strong>Objetivo General:</strong> ${curso.objetivogeneral}</p>
+
+        <video controls> <!-- Nueva sección para el video -->
+      <source src="${curso.video}" type="video/mp4">
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+    <p><a href="${curso.pdf}" target="_blank">Ver PDF del curso</a></p> <!-- Nueva línea para el enlace al PDF -->
+  
+
+
+        
       `;
       document.body.appendChild(cursoContainer);
     }
