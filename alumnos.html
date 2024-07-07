@@ -107,6 +107,10 @@
      
     <p> <br> <a href="${curso.pdf}" target="_blank">Ver PDF del curso</a></p> <!-- Nueva línea para el enlace al PDF -->
   
+  <video controls> <!-- Nueva sección para el video -->
+      <source src="${curso.video}" type="video/mp4">
+      Tu navegador no soporta la etiqueta de video.
+    </video>
         
       `;
       document.body.appendChild(cursoContainer);
