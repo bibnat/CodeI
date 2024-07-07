@@ -104,17 +104,8 @@
         <p><strong>Presentación:</strong> ${curso.presentacion}</p>
         <p><strong>Objetivo General:</strong> ${curso.objetivogeneral}</p>
 
-        <video controls> <!-- Nueva sección para el video -->
-      const videoPlayer = document.getElementById('video-player');
-  videoPlayer.src = curso.videoUrl;
-
-  videoPlayer.addEventListener('error', (event) => {
-    console.error('Error al cargar el video:', event.target.error.message);
-    // Mostrar un mensaje de error al usuario
-    const errorElement = document.createElement('p');
-    errorElement.textContent = 'No se pudo cargar el video. Por favor, inténtalo más tarde.';
-    videoContainer.appendChild(errorElement);
-  });
+        
+  
 
     
     <p><a href="${curso.pdf}" target="_blank">Ver PDF del curso</a></p> <!-- Nueva línea para el enlace al PDF -->
