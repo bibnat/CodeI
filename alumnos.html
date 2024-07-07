@@ -49,6 +49,10 @@
 <body>
   <h1 id="bienvenido"> </h1>
 
+  <div id="video-container">
+  <video id="video-player" controls></video>
+</div>
+
   <script>
     // Obtener el ID del registro desde la URL
     var urlParams = new URLSearchParams(window.location.search);
@@ -104,15 +108,20 @@
         <p><strong>Objetivo General:</strong> ${curso.objetivogeneral}</p>
 
         <video controls> <!-- Nueva sección para el video -->
-      <video controls src="https://firebasestorage.googleapis.com/v0/b/codei24.appspot.com/o/videos%2Fvideo.mp4?alt=media">
-  Tu navegador no soporta la etiqueta de video.
-</video>
+      const videoPlayer = document.getElementById('video-player');
+  videoPlayer.src = curso.videoUrl;
 
-    </video>
+  videoPlayer.addEventListener('error', (event) => {
+    console.error('Error al cargar el video:', event.target.error.message);
+    // Mostrar un mensaje de error al usuario
+    const errorElement = document.createElement('p');
+    errorElement.textContent = 'No se pudo cargar el video. Por favor, inténtalo más tarde.';
+    videoContainer.appendChild(errorElement);
+  });
+
+    
     <p><a href="${curso.pdf}" target="_blank">Ver PDF del curso</a></p> <!-- Nueva línea para el enlace al PDF -->
   
-
-
         
       `;
       document.body.appendChild(cursoContainer);
